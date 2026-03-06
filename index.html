@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dillenburg - Startseite</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #e4e4e4;
+        }
+        .container { display: flex; min-height: 100vh; }
+        .sidebar {
+            width: 250px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 30px 20px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .sidebar h1 {
+            font-size: 24px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #4ade80;
+            color: #4ade80;
+        }
+        .menu { list-style: none; }
+        .menu li { margin-bottom: 8px; }
+        .menu a {
+            display: block;
+            padding: 12px 16px;
+            color: #a0a0a0;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+        .menu a:hover, .menu a.active {
+            background: rgba(74, 222, 128, 0.1);
+            color: #4ade80;
+        }
+        .menu a.active { border-left: 3px solid #4ade80; }
+        .main { flex: 1; padding: 40px; overflow-y: auto; }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .card h2 {
+            color: #4ade80;
+            margin-bottom: 20px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card h2::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: #4ade80;
+            border-radius: 2px;
+        }
+        .biowetter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .bio-item {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .bio-label { font-size: 12px; color: #888; margin-bottom: 8px; text-transform: uppercase; }
+        .bio-value { font-size: 18px; font-weight: bold; }
+        .bio-value.gruen { color: #4ade80; }
+        .bio-value.gelb { color: #fbbf24; }
+        .bio-value.rot { color: #f87171; }
+        .aktuelles-text { line-height: 1.8; color: #d0d0d0; white-space: pre-line; }
+        .datum { color: #666; font-size: 12px; margin-bottom: 20px; }
+        .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #666; font-size: 12px; }
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .sidebar { width: 100%; padding: 20px; }
+            .main { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h1>🏠 Dillenburg</h1>
+            <ul class="menu">
+                <li><a href="index.html" class="active">Startseite</a></li>
+                <li><a href="menu1.html">MENÜ 1</a></li>
+                <li><a href="menu2.html">MENÜ 2</a></li>
+                <li><a href="menu3.html">MENÜ 3</a></li>
+                <li><a href="menu4.html">MENÜ 4</a></li>
+            </ul>
+        </nav>
+        <main class="main">
+            <div class="card">
+                <h2>Aktuelles</h2>
+                <p class="datum">Friday, 06. March 2026</p>
+                <div class="aktuelles-text">Hallo zusammen,
+
+heute starten wir mit meiner Seite bei GitHub! Hier werden zukünftig 
+diverse Dinge veröffentlicht. Ich entscheide noch, was das sein wird. 
+Dafür habe ich auch einen Auszubildenden, der diese Seite pflegt. Danke 
+an dieser Stelle an ihn!
+
+Seit gespannt auf weitere Informationen!</div>
+            </div>
+            <div class="card">
+                <h2>🌤️ Biowetter heute</h2>
+                <div class="biowetter-grid">
+                    <div class="bio-item">
+                        <div class="bio-label">Blutdruckkrise</div>
+                        <div class="bio-value gruen">keine</div>
+                    </div>
+                    <div class="bio-item">
+                        <div class="bio-label">Migräne</div>
+                        <div class="bio-value gruen">keine</div>
+                    </div>
+                    <div class="bio-item">
+                        <div class="bio-label">Kopfschmerzen</div>
+                        <div class="bio-value gelb">schwach</div>
+                    </div>
+                    <div class="bio-item">
+                        <div class="bio-label">Reaktionszeit</div>
+                        <div class="bio-value gruen">-</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>© 2026 Dillenburg | Erstellt mit OpenClaw</p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
