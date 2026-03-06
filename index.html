@@ -24,12 +24,22 @@
             padding: 30px 20px;
             border-right: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .sidebar h1 {
-            font-size: 28px;
-            font-weight: 700;
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 2px solid #4ade80;
+        }
+        .logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+        .sidebar h1 {
+            font-size: 24px;
+            font-weight: 700;
             color: #4ade80;
             letter-spacing: 2px;
         }
@@ -103,7 +113,10 @@
 <body>
     <div class="container">
         <nav class="sidebar">
-            <h1>🏠 Petronyx</h1>
+            <div class="sidebar-header">
+                <img src="logo.png" alt="Petronyx" class="logo">
+                <h1>Petronyx</h1>
+            </div>
             <ul class="menu">
                 <li><a href="index.html" class="active">Startseite</a></li>
                 <li><a href="menu1.html">MENÜ 1</a></li>
@@ -115,7 +128,7 @@
         <main class="main">
             <div class="card">
                 <h2>Aktuelles</h2>
-                <p class="datum">Friday, 06. March 2026</p>
+                <p class="datum">07. März 2026</p>
                 <div class="aktuelles-text">Trump: Kein Deal mit dem Iran - die USA werden nur die "bedingungslose Kapitulation" des Regimes akzeptieren.
 
 Trump erklaerte, dass nach der Kapitulation des Iran die USA und ihre Verbuendeten "unermaesslich daran arbeiten wuerden, den Iran vor der Zerstoerung zu bewahren und ihn wirtschaftlich groesser, besser und staerker zu machen als je zuvor.</div>
