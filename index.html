@@ -72,12 +72,12 @@
             background: #2563eb;
             border-radius: 2px;
         }
-        .biowetter-grid, .kurse-grid {
+        .biowetter-grid, .kurse-grid, .pollen-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
         }
-        .bio-item, .kurs-item {
+        .bio-item, .kurs-item, .pollen-item {
             background: #f8fafc;
             padding: 15px;
             border-radius: 8px;
@@ -94,7 +94,7 @@
             font-size: 28px;
             line-height: 1;
         }
-        .bio-label, .kurs-label { 
+        .bio-label, .kurs-label, .pollen-label { 
             font-family: 'Space Grotesk', sans-serif;
             font-size: 12px; 
             color: #64748b; 
@@ -103,10 +103,14 @@
             font-weight: 500;
             letter-spacing: 1px;
         }
-        .bio-value, .kurs-value { font-size: 18px; font-weight: 600; color: #1a202c; }
+        .bio-value, .kurs-value, .pollen-value { font-size: 18px; font-weight: 600; color: #1a202c; }
         .bio-value.gruen { color: #2563eb; }
         .bio-value.gelb { color: #f59e0b; }
         .bio-value.rot { color: #ef4444; }
+        .pollen-value.keine { color: #22c55e; }
+        .pollen-value.schwach { color: #84cc16; }
+        .pollen-value.mittel { color: #f59e0b; }
+        .pollen-value.stark { color: #ef4444; }
         .aktuelles-text { line-height: 1.8; color: #374151; white-space: pre-line; font-weight: 300; }
         .datum { color: #9ca3af; font-size: 12px; margin-bottom: 20px; font-weight: 400; }
         .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; color: #9ca3af; font-size: 12px; font-weight: 400; }
@@ -155,6 +159,31 @@ Trump erklaerte, dass nach der Kapitulation des Iran die USA und ihre Verbuendet
                         <span class="kurs-icon">₿</span>
                         <div class="kurs-label">Bitcoin</div>
                         <div class="kurs-value">58.730,00 €</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h2>🌿 Pollenflugvorhersage Dillenburg für den 07.03.2026</h2>
+                <div class="pollen-grid">
+                    <div class="pollen-item">
+                        <div class="pollen-label">Erle</div>
+                        <div class="pollen-value keine">keine</div>
+                    </div>
+                    <div class="pollen-item">
+                        <div class="pollen-label">Hasel</div>
+                        <div class="pollen-value schwach">schwach</div>
+                    </div>
+                    <div class="pollen-item">
+                        <div class="pollen-label">Löwenzahn</div>
+                        <div class="pollen-value keine">keine</div>
+                    </div>
+                    <div class="pollen-item">
+                        <div class="pollen-label">Gräser</div>
+                        <div class="pollen-value schwach">schwach</div>
+                    </div>
+                    <div class="pollen-item">
+                        <div class="pollen-label">Brennessel</div>
+                        <div class="pollen-value keine">keine</div>
                     </div>
                 </div>
             </div>
