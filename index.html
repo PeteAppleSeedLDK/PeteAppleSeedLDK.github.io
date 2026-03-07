@@ -20,7 +20,6 @@
             width: 100%;
             height: 180px;
             background: url('header.png') center/cover no-repeat;
-            position: relative;
         }
         .container { display: flex; min-height: calc(100vh - 180px); }
         .sidebar {
@@ -29,13 +28,6 @@
             backdrop-filter: blur(10px);
             padding: 30px 20px;
             border-right: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .logo {
-            width: 100%;
-            max-width: 160px;
-            display: block;
-            margin: 0 auto 20px;
-            object-fit: contain;
         }
         .menu { list-style: none; }
         .menu li { margin-bottom: 8px; }
@@ -119,7 +111,6 @@
     <header class="header"></header>
     <div class="container">
         <nav class="sidebar">
-            <img src="logo.jpg" alt="Petronyx" class="logo">
             <ul class="menu">
                 <li><a href="index.html" class="active">Startseite</a></li>
                 <li><a href="menu1.html">MENÜ 1</a></li>
