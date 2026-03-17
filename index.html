@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petronyx - Startseite</title>
+    <title>Petronyx - Ideen, Entwicklungen und Pläne</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,13 +16,7 @@
             min-height: 100vh;
             color: #1a202c;
         }
-        .header {
-            width: 100%;
-            height: 180px;
-            background: url('header.png') center center no-repeat;
-            background-size: contain;
-            background-color: #ffffff;
-        }
+        .header { width: 100%; height: 180px; background: url('header.png') left center no-repeat; background-size: cover; }
         .container { display: flex; min-height: calc(100vh - 180px); }
         .sidebar {
             width: 220px;
@@ -48,7 +42,6 @@
         }
         .menu a.active { border-left: 3px solid #2563eb; }
         .main { flex: 1; padding: 40px; overflow-y: auto; }
-        
         .card {
             background: #ffffff;
             border-radius: 12px;
@@ -75,38 +68,45 @@
             background: #2563eb;
             border-radius: 2px;
         }
-        
-        /* Kurse Grid */
-        .kurse-grid {
+        .biowetter-grid, .kurse-grid, .pollen-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
         }
-        .kurs-card {
+        .bio-item, .kurs-item, .pollen-item {
             background: #f8fafc;
+            padding: 15px;
             border-radius: 8px;
-            padding: 20px;
             text-align: center;
             border: 1px solid #e2e8f0;
         }
-        .kurs-label { font-size: 14px; color: #64748b; margin-bottom: 8px; }
-        .kurs-wert { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600; color: #1a202c; }
-        .kurs-aenderung { font-size: 14px; margin-top: 8px; }
-        .positiv { color: #22c55e; }
-        .negativ { color: #ef4444; }
-        
-        /* Pollen */
-        .pollen-item {
+        .kurs-item {
             display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #e2e8f0;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
         }
-        .pollen-item:last-child { border-bottom: none; }
-        
+        .kurs-icon { font-size: 28px; line-height: 1; }
+        .bio-label, .kurs-label, .pollen-label { 
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 12px; 
+            color: #64748b; 
+            margin-bottom: 8px; 
+            text-transform: uppercase; 
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        .bio-value, .kurs-value, .pollen-value { font-size: 18px; font-weight: 600; color: #1a202c; }
+        .bio-value.gruen { color: #22c55e; }
+        .bio-value.gelb { color: #f59e0b; }
+        .bio-value.rot { color: #ef4444; }
+        .pollen-value.keine { color: #22c55e; }
+        .pollen-value.schwach { color: #84cc16; }
+        .pollen-value.mittel { color: #f59e0b; }
+        .pollen-value.stark { color: #ef4444; }
+        .aktuelles-text { line-height: 1.8; color: #374151; white-space: pre-line; font-weight: 300; }
+        .datum { color: #9ca3af; font-size: 12px; margin-bottom: 20px; font-weight: 400; }
         .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; color: #9ca3af; font-size: 12px; font-weight: 400; }
-        
         @media (max-width: 768px) {
             .header { height: 120px; }
             .container { flex-direction: column; }
@@ -128,56 +128,97 @@
             </ul>
         </nav>
         <main class="main">
-            <!-- AKTUELLES -->
             <div class="card">
-                <h2>Aktuelles</h2>
-                <p>Keine neuen Nachrichten vorhanden.</p>
+                <h2>📢 Aktuelles</h2>
+                <p class="datum">Dienstag, der 17. März 2026 | 23:18 Uhr</p>
+                <div class="aktuelles-text">Iran war live: Trump says no deal with Iran until ‘unconditional
+ surrender’
+
+ * US PresidentDonald Trump demands
+ Iran’s
+ “unconditional surrender” as Tehran continues to strike targets in
+ Israel and Gulf region with drones and missiles.
+ * Iran’s ambassador to the United Nations Amir-Saeid Iravani says the
+ US and Israel “recognise no red line in committing their crimes”
+ against his country, as “densely populated” civilian areas are being
+ bombed.
+ * At least 1,332 people have been reported killed in US-Israeli
+ attacks on Iran since launch of war last weekend, andnew wave of
+ intense bombing
+ strike
+ Iranian capital early on Saturday.
+ * UN experts call for independent investigation of attack on girls’
+ school inIran’s Minab that killed 165
+ studentsthis
+ week. Call comes as media report that US military is likely
+ responsible for the attack.</div>
             </div>
-            
-            <!-- KURSE -->
             <div class="card">
-                <h2>Kurse</h2>
+                <h2>📈 Kurse vom 17.03.2026</h2>
                 <div class="kurse-grid">
-                    <div class="kurs-card">
-                        <div class="kurs-label">Bitcoin (EUR)</div>
-                        <div class="kurs-wert">64.816 €</div>
+                    <div class="kurs-item">
+                        <span class="kurs-icon">🟡</span>
+                        <div class="kurs-label">Gold</div>
+                        <div class="kurs-value">4.339,10 €</div>
                     </div>
-                    <div class="kurs-card">
-                        <div class="kurs-label">Gold (EUR/oz)</div>
-                        <div class="kurs-wert">2.614,70 €</div>
+                    <div class="kurs-item">
+                        <span class="kurs-icon">⚪</span>
+                        <div class="kurs-label">Silber</div>
+                        <div class="kurs-value">68,64 €</div>
                     </div>
-                    <div class="kurs-card">
-                        <div class="kurs-label">Silber (EUR/oz)</div>
-                        <div class="kurs-wert">29,05 €</div>
+                    <div class="kurs-item">
+                        <span class="kurs-icon">₿</span>
+                        <div class="kurs-label">Bitcoin</div>
+                        <div class="kurs-value">64.616,15 €</div>
                     </div>
                 </div>
-                <p style="margin-top: 15px; font-size: 12px; color: #9ca3af;">Stand: 17.03.2026 23:07</p>
             </div>
-            
-            <!-- BIOWETTER -->
             <div class="card">
-                <h2>Biowetter</h2>
-                <p>Wetterbedingte Belastungen für Dillenburg:</p>
-                <p style="margin-top:10px; color:#22c55e; font-weight:500;">Gesamtbelastung: gering</p>
+                <h2>🌿 Pollenflugvorhersage Dillenburg für den 17.03.2026</h2>
+                <div class="pollen-grid">
+                    <div class="pollen-item">
+                        <div class="pollen-label">Erle</div>
+                        <div class="pollen-value keine">keine</div>
+                    </div>
+                    <div class="pollen-item">
+                        <div class="pollen-label">Hasel</div>
+                        <div class="pollen-value keine">keine</div>
+                    </div>
+                    <div class="pollen-item">
+                        <div class="pollen-label">Löwenzahn</div>
+                        <div class="pollen-value keine">keine</div>
+                    </div>
+                    <div class="pollen-item">
+                        <div class="pollen-label">Gräser</div>
+                        <div class="pollen-value keine">keine</div>
+                    </div>
+                    <div class="pollen-item">
+                        <div class="pollen-label">Brennessel</div>
+                        <div class="pollen-value keine">keine</div>
+                    </div>
+                </div>
             </div>
-            
-            <!-- POLLEN -->
             <div class="card">
-                <h2>Pollenflugvorhersage Dillenburg</h2>
-                <p style="color: #64748b; margin-bottom: 15px;">Dienstag, 17.3.2026</p>
-                <div class="pollen-item"><span>Erle</span><span style="color:#eab308;font-weight:600">schwach</span></div>
-                <div class="pollen-item"><span>Hasel</span><span style="color:#eab308;font-weight:600">schwach</span></div>
-                <div class="pollen-item"><span>Ulme</span><span style="color:#f97316;font-weight:600">mäßig</span></div>
-                <div class="pollen-item"><span>Pappel</span><span style="color:#f97316;font-weight:600">mäßig</span></div>
-                <div class="pollen-item"><span>Weide</span><span style="color:#f97316;font-weight:600">mäßig</span></div>
-                <div class="pollen-item"><span>Birke</span><span style="color:#eab308;font-weight:600">schwach</span></div>
-                <div class="pollen-item"><span>Eiche</span><span style="color:#eab308;font-weight:600">schwach</span></div>
-                <div class="pollen-item"><span>Esche</span><span style="color:#eab308;font-weight:600">schwach</span></div>
-                <div class="pollen-item"><span>Platane</span><span style="color:#f97316;font-weight:600">mäßig</span></div>
-                <div class="pollen-item"><span>Buche</span><span style="color:#eab308;font-weight:600">schwach</span></div>
-                <div class="pollen-item"><span>Kiefer</span><span style="color:#eab308;font-weight:600">schwach</span></div>
+                <h2>🌤️ Biowetter heute (17.03.2026)</h2>
+                <div class="biowetter-grid">
+                    <div class="bio-item">
+                        <div class="bio-label">Blutdruckkrise</div>
+                        <div class="bio-value gruen">stark</div>
+                    </div>
+                    <div class="bio-item">
+                        <div class="bio-label">Migräne</div>
+                        <div class="bio-value gruen">-</div>
+                    </div>
+                    <div class="bio-item">
+                        <div class="bio-label">Kopfschmerzen</div>
+                        <div class="bio-value gruen">stark</div>
+                    </div>
+                    <div class="bio-item">
+                        <div class="bio-label">Reizbarkeit</div>
+                        <div class="bio-value gruen">sehr stark</div>
+                    </div>
+                </div>
             </div>
-            
             <div class="footer">
                 <p>© 2026 by CP | unter Mitwirkung meines Azubis</p>
             </div>
