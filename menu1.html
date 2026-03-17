@@ -46,53 +46,39 @@
         }
         .menu a.active { border-left: 3px solid #2563eb; }
         .main { flex: 1; padding: 40px; overflow-y: auto; }
-        
-        /* Content Card Style - wie im Beispielbild */
         .card {
             background: #ffffff;
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 24px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-        }
-        .card-icon {
-            width: 64px;
-            height: 64px;
-            min-width: 64px;
-            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
             border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .card h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #2563eb;
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: 600;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 32px;
+            gap: 10px;
+            letter-spacing: 1px;
         }
-        .card-content { flex: 1; }
-        .card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            color: #1a202c;
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            letter-spacing: 0.5px;
+        .card h2::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: #2563eb;
+            border-radius: 2px;
         }
-        .card p {
-            line-height: 1.7;
-            color: #4b5563;
-            font-size: 15px;
-        }
-        
+        .content-text { line-height: 1.8; color: #374151; }
         .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; color: #9ca3af; font-size: 12px; font-weight: 400; }
         @media (max-width: 768px) {
             .header { height: 120px; }
             .container { flex-direction: column; }
             .sidebar { width: 100%; padding: 20px; }
             .main { padding: 20px; }
-            .card { flex-direction: column; }
-            .card-icon { width: 100%; height: 48px; border-radius: 8px; }
         }
     </style>
 </head>
@@ -110,29 +96,11 @@
         </nav>
         <main class="main">
             <div class="card">
-                <div class="card-icon">🌿</div>
-                <div class="card-content">
-                    <h3>DAS TEAM</h3>
-                    <p>Hier folgt der Inhalt für MENÜ 1. Beschreibe hier das Team, eure Philosophie oder was auch immer du zeigen möchtest.</p>
+                <h2>MENÜ 1</h2>
+                <div class="content-text">
+                    <p>Hier folgt der Inhalt für MENÜ 1.</p>
                 </div>
             </div>
-            
-            <div class="card">
-                <div class="card-icon">💼</div>
-                <div class="card-content">
-                    <h3>LEISTUNGEN</h3>
-                    <p>Hier könnten eure Dienstleistungen oder Produkte präsentiert werden.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-icon">📞</div>
-                <div class="card-content">
-                    <h3>KONTAKT</h3>
-                    <p>So können Interessenten euch erreichen.</p>
-                </div>
-            </div>
-            
             <div class="footer">
                 <p>© 2026 by CP | unter Mitwirkung meines Azubis</p>
             </div>
